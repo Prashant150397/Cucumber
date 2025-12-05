@@ -7,9 +7,9 @@ import org.testng.annotations.DataProvider;
 
 @CucumberOptions(
 	    features = {"src/test/resources/features"},
-	    glue = {"com.qa.mystepdefs","hooks"},
+	    glue = {"com.qa.mystepdefs"},
 	    plugin = {
-	        "pretty", 
+	        "pretty",
 	        "html:target/cucumber-reports", 
 	        "json:target/cucumber.json",
 	        "rerun:target/rerun/failed_Scenarios.txt"

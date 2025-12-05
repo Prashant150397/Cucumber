@@ -12,6 +12,7 @@ import org.testng.Assert;
 
 import pages.DriverFactory;
 import pages.LoginPage;
+import util.ConfigReader;
 
 public class LoginStepDefinitions {
 
@@ -20,7 +21,7 @@ public class LoginStepDefinitions {
 
     @Given("I am on the OpenCart login page")
     public void i_am_on_the_open_cart_login_page() {
-        DriverFactory.getDriver().get("https://naveenautomationlabs.com/opencart/index.php?route=account/login");
+        DriverFactory.getDriver().get(ConfigReader.get("url"));
         loginPage = new LoginPage();
 
     }

@@ -1,21 +1,17 @@
 package com.qa.mystepdefs;
 
-import io.github.bonigarcia.wdm.WebDriverManager; // ✅ You forgot to import this
-
-import io.cucumber.java.After;
 import io.cucumber.java.Before;
+import io.cucumber.java.After;
 import pages.DriverFactory;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-
+import util.ConfigReader;
 
 public class hooks {
-	@Before
-    public void setUp() {
-		WebDriverManager.chromedriver().setup();  // ✅ Auto sets path
-	    WebDriver driver = new ChromeDriver();
-	    DriverFactory.setDriver(driver);
-	    DriverFactory.getDriver().manage().window().maximize();
+
+    @Before
+    public void setup() {
+        ConfigReader.init();
+        DriverFactory.initDriver();
+        DriverFactory.getDriver().get(ConfigReader.get("url"));
     }
 
     @After
