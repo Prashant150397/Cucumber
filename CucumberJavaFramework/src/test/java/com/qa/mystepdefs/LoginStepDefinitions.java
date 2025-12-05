@@ -23,7 +23,7 @@ public class LoginStepDefinitions {
     public void i_am_on_the_open_cart_login_page() {
         DriverFactory.getDriver().get(ConfigReader.get("url"));
         loginPage = new LoginPage();
-
+        
     }
 
     @Given("I have entered a valid username and password")

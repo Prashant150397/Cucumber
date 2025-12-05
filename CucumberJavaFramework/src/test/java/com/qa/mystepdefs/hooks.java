@@ -14,6 +14,7 @@ public class hooks {
         DriverFactory.getDriver().get(ConfigReader.get("url"));
     }
 
+    
     @After
     public void tearDown() {
         DriverFactory.removeDriver();
