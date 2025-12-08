@@ -5,16 +5,19 @@ import org.openqa.selenium.WebElement;
 
 public class LoginPage {
 
+    //private WebDriverWait wait=new WebDriverWait(driver,Duration.ofSeconds(10))
+
     // Locators
-    private By emailInputLocator = By.name("email");
-    private By passwordInputLocator = By.name("password");
-    private By loginButtonLocator = By.xpath("//input[@type='submit']");
-    private By forgottenPasswordLinkLocator = By.linkText("Forgotten Password");
-    private By logoutLinkLocator = By.xpath("//a[@class='list-group-item' and contains(text(),'Logout')]");
+    private final By emailInputLocator = By.name("email");
+    private final By passwordInputLocator = By.name("password");
+    private final By loginButtonLocator = By.xpath("//input[@type='submit']");
+    private final By forgottenPasswordLinkLocator = By.linkText("Forgotten Password");
+    private final By logoutLinkLocator = By.xpath("//a[@class='list-group-item' and contains(text(),'Logout')]");
 
     // Methods
     public void enterEmail(String email) {
         WebElement emailInput = DriverFactory.getDriver().findElement(emailInputLocator);
+        //wait.until(ExpectedConditions.visibilityOfElementLocated(emailInputLocator));
         emailInput.sendKeys(email);
     }
 
