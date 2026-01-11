@@ -55,7 +55,13 @@
     <artifactId>selenium-java</artifactId>
     <version>4.21.0</version>
 </dependency>
-
+<!-- Source: https://mvnrepository.com/artifact/tech.grasshopper/extentreports-cucumber7-adapter -->
+<dependency>
+    <groupId>tech.grasshopper</groupId>
+    <artifactId>extentreports-cucumber7-adapter</artifactId>
+    <version>1.14.0</version>
+    <scope>compile</scope>
+</dependency>
 
 
 

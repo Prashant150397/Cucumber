@@ -10,6 +10,7 @@ import org.testng.annotations.DataProvider;
 	    glue = {"com.qa.mystepdefs"},
 	    plugin = {
 	        "pretty",
+	        "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
 	        "html:target/cucumber-reports", 
 	        "json:target/cucumber.json",
 	        "rerun:target/rerun/failed_Scenarios.txt"
