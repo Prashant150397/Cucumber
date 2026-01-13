@@ -3,6 +3,9 @@ package com.qa.mystepdefs;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 import io.cucumber.java.en.Then;
+
+import java.util.*;
+
 import org.testng.Assert;
 
 import pages.DriverFactory;
@@ -12,18 +15,21 @@ import util.ConfigReader;
 public class LoginStepDefinitions {
 
     private LoginPage loginPage;
-
-
+    // ScenarioContext
+    private Map<String, String> data = new HashMap<>();
+    
     @Given("I am on the OpenCart login page")
     public void i_am_on_the_open_cart_login_page() {
         DriverFactory.getDriver().get(ConfigReader.get("url"));
         loginPage = new LoginPage();
-        
+        String email="prashantkumarrajput59@gmail.com";
+        data.put("email", email);
     }
 
     @Given("I have entered a valid username and password")
     public void i_have_entered_a_valid_username_and_password() {
-        loginPage.enterEmail("prashantkumarrajput59@gmail.com");
+    	String getEmail=data.get("email");
+        loginPage.enterEmail(getEmail);
         loginPage.enterPassword("Myautomation@#143");
     }
 
