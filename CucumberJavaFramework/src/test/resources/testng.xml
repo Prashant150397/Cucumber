@@ -5,14 +5,4 @@
             <class name="runner.TestRunner"/>
         </classes>
     </test>
-    <test name="Run Test2">
-        <classes>
-            <class name="runner.TestRunner"/>
-        </classes>
-    </test>
-    <test name="Run Test3">
-        <classes>
-            <class name="runner.TestRunner"/>
-        </classes>
-    </test>
 </suite>
